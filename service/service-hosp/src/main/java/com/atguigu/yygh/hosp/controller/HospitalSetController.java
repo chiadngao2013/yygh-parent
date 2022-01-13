@@ -99,13 +99,13 @@ public class HospitalSetController {
     @GetMapping("getHospSet/{id}")
     public Result getHospSet(@PathVariable Long id) {
         HospitalSet hospitalSet = hospitalSetService.getById(id);
-        return Result.ok();
+        return Result.ok(hospitalSet);
 
     }
 
     //    6.修改医院设置
-    @PostMapping("udpdateHospSet")
-    public Result udpdateHospSet(@RequestBody HospitalSet hospitalSet) {
+    @PostMapping("updateHospitalSet")
+    public Result updateHospitalSet(@RequestBody HospitalSet hospitalSet) {
         boolean b = hospitalSetService.updateById(hospitalSet);
         if (b) {
             return Result.ok();
