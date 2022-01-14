@@ -62,7 +62,10 @@ public class Dict {
     @TableField("dict_code")
     private String dictCode;
 
+
+//  说明：hasChildren为element树形组件所需字典数据
     @ApiModelProperty(value = "是否包含子节点")
+//  exist = false作用为即使数据库没有这个hasChildren字段也不会报错
     @TableField(exist = false)
     private boolean hasChildren;
 

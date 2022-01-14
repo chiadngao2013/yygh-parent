@@ -14,7 +14,8 @@
     <version>1.0</version>
     <modules>
         <module>service-hosp</module>
-        <module>service-user</module>
+<!--        <module>service-user</module>-->
+        <module>service-cmn</module>
     </modules>
     <dependencies>
         <dependency>
