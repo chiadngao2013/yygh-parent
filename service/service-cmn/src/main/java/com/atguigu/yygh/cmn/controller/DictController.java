@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-@CrossOrigin //解决跨域无法访问
+//@CrossOrigin //解决跨域无法访问
 @Api(value = "数据字典接口")
 @RestController
 @RequestMapping("/admin/cmn/dict")

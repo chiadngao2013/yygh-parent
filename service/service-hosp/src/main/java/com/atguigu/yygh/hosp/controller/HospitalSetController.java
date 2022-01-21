@@ -20,7 +20,7 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
-@CrossOrigin//跨域解决
+//@CrossOrigin//跨域解决
 public class HospitalSetController {
     //    注入service
     @Autowired
