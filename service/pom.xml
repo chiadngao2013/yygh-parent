@@ -16,6 +16,7 @@
         <module>service-hosp</module>
 <!--        <module>service-user</module>-->
         <module>service-cmn</module>
+        <module>service-user</module>
     </modules>
     <dependencies>
         <dependency>
