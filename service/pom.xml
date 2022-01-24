@@ -14,9 +14,9 @@
     <version>1.0</version>
     <modules>
         <module>service-hosp</module>
-<!--        <module>service-user</module>-->
         <module>service-cmn</module>
         <module>service-user</module>
+        <module>service-msm</module>
     </modules>
     <dependencies>
         <dependency>
@@ -86,7 +86,8 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
-                <includes> <include>**/*.yml</include>
+                <includes>
+                    <include>**/*.yml</include>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
