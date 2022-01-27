@@ -17,10 +17,7 @@
     <description>common-util</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>com.alibaba</groupId>
