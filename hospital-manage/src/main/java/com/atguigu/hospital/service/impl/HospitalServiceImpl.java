@@ -26,7 +26,7 @@ import java.util.Map;
 public class HospitalServiceImpl implements HospitalService {
 
     @Autowired
-    private ScheduleMapper hospitalMapper;
+    private ScheduleMapper scheduleMapper;
 
     @Autowired
     private OrderInfoMapper orderInfoMapper;
@@ -42,7 +42,7 @@ public class HospitalServiceImpl implements HospitalService {
         String reserveTime = (String) paramMap.get("reserveTime");
         String amount = (String) paramMap.get("amount");
 
-        Schedule schedule = this.getSchedule(hosScheduleId);
+        Schedule schedule = this.getSchedule("1L");
         if (null == schedule) {
             throw new YyghException(ResultCodeEnum.DATA_ERROR);
         }
@@ -63,12 +63,13 @@ public class HospitalServiceImpl implements HospitalService {
         int availableNumber = schedule.getAvailableNumber().intValue() - 1;
         if (availableNumber > 0) {
             schedule.setAvailableNumber(availableNumber);
-            hospitalMapper.updateById(schedule);
+            scheduleMapper.updateById(schedule);
 
             //记录预约记录
             OrderInfo orderInfo = new OrderInfo();
             orderInfo.setPatientId(patientId);
-            orderInfo.setScheduleId(Long.parseLong(hosScheduleId));
+
+            orderInfo.setScheduleId(1L);
             int number = schedule.getReservedNumber().intValue() - schedule.getAvailableNumber().intValue();
             orderInfo.setNumber(number);
             orderInfo.setAmount(new BigDecimal(amount));
@@ -132,7 +133,7 @@ public class HospitalServiceImpl implements HospitalService {
     }
 
     private Schedule getSchedule(String frontSchId) {
-        return hospitalMapper.selectById(frontSchId);
+        return scheduleMapper.selectById(frontSchId);
     }
 
     /**

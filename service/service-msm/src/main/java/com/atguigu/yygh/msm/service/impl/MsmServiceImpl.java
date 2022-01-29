@@ -8,6 +8,7 @@ import com.cloopen.rest.sdk.CCPRestSmsSDK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -61,8 +62,15 @@ public class MsmServiceImpl implements MsmService {
 
     }
 
-//    @Override
-//    public boolean send(MsmVo msmVo) {
-//        return false;
-//    }
+    //mq发送短信封装
+    @Override
+    public boolean send(MsmVo msmVo) {
+        if (!StringUtils.isEmpty(msmVo.getPhone())) {
+            String code = (String)msmVo.getParam().get("code");
+            boolean isSend = this.send(msmVo.getPhone(), code);
+            return isSend;
+        }
+        return false;
+    }
+
 }

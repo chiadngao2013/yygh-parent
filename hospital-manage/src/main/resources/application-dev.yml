@@ -13,6 +13,11 @@ spring:
     cache: false
     #配置模板路径，默认是templates，可以不用配置
     prefix: classpath:/templates/
+## nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:18658
 #  redis:
 #    host: 192.168.44.164
 #    port: 6379

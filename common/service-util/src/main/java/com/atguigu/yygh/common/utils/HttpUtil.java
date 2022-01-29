@@ -62,6 +62,7 @@ public final class HttpUtil {
                 os.flush();
                 os.close();
             }
+
             BufferedReader in = new BufferedReader(new InputStreamReader(httpcon.getInputStream(), "utf-8"));
             String inputLine;
             StringBuilder bankXmlBuffer = new StringBuilder();

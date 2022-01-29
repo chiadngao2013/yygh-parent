@@ -7,8 +7,8 @@ import java.util.Date;
 
 public class JwtHelper {
 
-//    过期token时间设置   1天
-    private static long tokenExpiration = 24*60*60*1000;
+//    过期token时间设置   365天
+    private static long tokenExpiration = 24*60*60*365000;
 //    生成秘钥的签名
     private static String tokenSignKey = "123456";
 
